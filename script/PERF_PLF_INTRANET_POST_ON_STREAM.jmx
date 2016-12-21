@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jmeterTestPlan version="1.2" properties="2.9" jmeter="3.0 r1743807">
+<jmeterTestPlan version="1.2" properties="2.1">
   <hashTree>
     <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="PERF_PLF_INTRANET_POST_ON_STREAM" enabled="true">
       <stringProp name="TestPlan.comments">JM212 + JM plugins 11</stringProp>
@@ -9,42 +9,42 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="ThreadCount" elementType="Argument">
             <stringProp name="Argument.name">ThreadCount</stringProp>
-            <stringProp name="Argument.value">${__P(expThreadCount,4)}</stringProp>
+            <stringProp name="Argument.value">${__P(expThreadCount,0)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="LoopCount" elementType="Argument">
             <stringProp name="Argument.name">LoopCount</stringProp>
-            <stringProp name="Argument.value">${__P(expLoopCount,4)}</stringProp>
+            <stringProp name="Argument.value">${__P(expLoopCount,1000000)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="Duration" elementType="Argument">
             <stringProp name="Argument.name">Duration</stringProp>
-            <stringProp name="Argument.value">${__P(expDuration,3600)}</stringProp>
+            <stringProp name="Argument.value">${__P(expDuration,600)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="Server" elementType="Argument">
             <stringProp name="Argument.name">Server</stringProp>
-            <stringProp name="Argument.value">${__P(expHost,localhost)}</stringProp>
+            <stringProp name="Argument.value">${__P(expHost,cea-test.exoplatform.org)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="Port" elementType="Argument">
             <stringProp name="Argument.name">Port</stringProp>
-            <stringProp name="Argument.value">${__P(expPort,8080)}</stringProp>
+            <stringProp name="Argument.value">${__P(expPort,443)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="RampUpPeriod" elementType="Argument">
             <stringProp name="Argument.name">RampUpPeriod</stringProp>
-            <stringProp name="Argument.value">${__P(expRampup,150)}</stringProp>
+            <stringProp name="Argument.value">${__P(expRampup,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="CSV_DATASET_FOLDER" elementType="Argument">
             <stringProp name="Argument.name">CSV_DATASET_FOLDER</stringProp>
-            <stringProp name="Argument.value">${__P(expCsvDatasetFolder,/home/exo/Desktop)}</stringProp>
+            <stringProp name="Argument.value">${__P(expCsvDatasetFolder,./csv)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="UserDatasetName" elementType="Argument">
             <stringProp name="Argument.name">UserDatasetName</stringProp>
-            <stringProp name="Argument.value">${__P(expUserDatasetName,POST_ON_STREAM_SETTINGS.csv)}</stringProp>
+            <stringProp name="Argument.value">${__P(expUserDatasetName,CEA_USERS.csv)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="PageResponseTimeout" elementType="Argument">
@@ -59,7 +59,7 @@
           </elementProp>
           <elementProp name="VUGMaxThread" elementType="Argument">
             <stringProp name="Argument.name">VUGMaxThread</stringProp>
-            <stringProp name="Argument.value">${__P(expVUGMaxThread,0)}</stringProp>
+            <stringProp name="Argument.value">${__P(expVUGMaxThread,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="VUGWaitTime" elementType="Argument">
@@ -137,7 +137,7 @@
             <stringProp name="HTTPSampler.port">${Port}</stringProp>
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
             <stringProp name="HTTPSampler.response_timeout">${PageResponseTimeout}</stringProp>
-            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
             <stringProp name="HTTPSampler.path"></stringProp>
             <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
@@ -149,15 +149,15 @@
             <boolProp name="CookieManager.clearEachIteration">true</boolProp>
           </CookieManager>
           <hashTree/>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Users CSV Data Set Config" enabled="true">
             <stringProp name="filename">${CSV_DATASET_FOLDER}/${UserDatasetName}</stringProp>
             <stringProp name="fileEncoding">	</stringProp>
-            <stringProp name="variableNames">UserName,UserPassword,PostPrefix,PostFrom,PostTo</stringProp>
+            <stringProp name="variableNames">UserName,UserPassword</stringProp>
             <stringProp name="delimiter">,</stringProp>
-            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="quotedData">true</boolProp>
             <boolProp name="recycle">true</boolProp>
             <boolProp name="stopThread">false</boolProp>
-            <stringProp name="shareMode">shareMode.all</stringProp>
+            <stringProp name="shareMode">Toutes les unités</stringProp>
           </CSVDataSet>
           <hashTree/>
           <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Login Controller" enabled="true">
@@ -176,23 +176,16 @@
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   </elementProp>
                   <elementProp name="username" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.name">username</stringProp>
                     <stringProp name="Argument.value">${UserName}</stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   </elementProp>
                   <elementProp name="password" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.name">password</stringProp>
                     <stringProp name="Argument.value">${UserPassword}</stringProp>
-                    <stringProp name="Argument.metadata">=</stringProp>
-                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
-                  </elementProp>
-                  <elementProp name="signIn" elementType="HTTPArgument">
-                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                    <stringProp name="Argument.name">signIn</stringProp>
-                    <stringProp name="Argument.value">Sign+in</stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
                     <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   </elementProp>
@@ -202,7 +195,7 @@
               <stringProp name="HTTPSampler.port"></stringProp>
               <stringProp name="HTTPSampler.connect_timeout"></stringProp>
               <stringProp name="HTTPSampler.response_timeout"></stringProp>
-              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
               <stringProp name="HTTPSampler.path">/portal/login</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
@@ -232,10 +225,6 @@
                     <stringProp name="Header.name">User-Agent</stringProp>
                     <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:16.0) Gecko/20100101 Firefox/16.0</stringProp>
                   </elementProp>
-                  <elementProp name="Referer" elementType="Header">
-                    <stringProp name="Header.name">Referer</stringProp>
-                    <stringProp name="Header.value">http://${Server}:${Port}/portal/intranet/</stringProp>
-                  </elementProp>
                   <elementProp name="Accept-Encoding" elementType="Header">
                     <stringProp name="Header.name">Accept-Encoding</stringProp>
                     <stringProp name="Header.value">gzip, deflate</stringProp>
@@ -254,7 +243,7 @@
               <hashTree/>
               <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                 <collectionProp name="Asserion.test_strings">
-                  <stringProp name="-737592314">MY SPACES|My Spaces</stringProp>
+                  <stringProp name="99900">eXo</stringProp>
                 </collectionProp>
                 <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                 <boolProp name="Assertion.assume_success">false</boolProp>
@@ -262,7 +251,7 @@
               </ResponseAssertion>
               <hashTree/>
               <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Thinking" enabled="true">
-                <stringProp name="ConstantTimer.delay">${ThinkTime}</stringProp>
+                <stringProp name="ConstantTimer.delay">2000</stringProp>
               </ConstantTimer>
               <hashTree/>
               <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
@@ -308,12 +297,12 @@
           <hashTree>
             <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
               <boolProp name="LoopController.continue_forever">true</boolProp>
-              <stringProp name="LoopController.loops">${__javaScript(${PostTo}+1-${PostFrom})}</stringProp>
+              <stringProp name="LoopController.loops">4</stringProp>
             </LoopController>
             <hashTree>
               <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="PostIndexCounter" enabled="true">
-                <stringProp name="CounterConfig.start">${PostFrom}</stringProp>
-                <stringProp name="CounterConfig.end">${PostTo}</stringProp>
+                <stringProp name="CounterConfig.start">0</stringProp>
+                <stringProp name="CounterConfig.end">3</stringProp>
                 <stringProp name="CounterConfig.incr">1</stringProp>
                 <stringProp name="CounterConfig.name">PostIndex</stringProp>
                 <stringProp name="CounterConfig.format">0000</stringProp>
@@ -368,7 +357,7 @@
                     <elementProp name="composerInput" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">false</boolProp>
                       <stringProp name="Argument.name">composerInput</stringProp>
-                      <stringProp name="Argument.value">${UserName} ${PostPrefix}${PostIndex}</stringProp>
+                      <stringProp name="Argument.value">${UserName} User_Activity_${PostIndex}</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                       <boolProp name="HTTPArgument.use_equals">true</boolProp>
                     </elementProp>
@@ -385,8 +374,8 @@
                 <stringProp name="HTTPSampler.port"></stringProp>
                 <stringProp name="HTTPSampler.connect_timeout"></stringProp>
                 <stringProp name="HTTPSampler.response_timeout"></stringProp>
-                <stringProp name="HTTPSampler.protocol">http</stringProp>
-                <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+                <stringProp name="HTTPSampler.protocol"></stringProp>
+                <stringProp name="HTTPSampler.contentEncoding"></stringProp>
                 <stringProp name="HTTPSampler.path">/portal/intranet/</stringProp>
                 <stringProp name="HTTPSampler.method">POST</stringProp>
                 <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -431,10 +420,6 @@
                       <stringProp name="Header.name">X-Requested-With</stringProp>
                       <stringProp name="Header.value">XMLHttpRequest</stringProp>
                     </elementProp>
-                    <elementProp name="Referer" elementType="Header">
-                      <stringProp name="Header.name">Referer</stringProp>
-                      <stringProp name="Header.value">http://localhost:8080/portal/intranet/</stringProp>
-                    </elementProp>
                   </collectionProp>
                 </HeaderManager>
                 <hashTree/>
@@ -444,14 +429,14 @@
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                   <collectionProp name="Asserion.test_strings">
-                    <stringProp name="1228943294">(${PostPrefix}${PostIndex}|gtn:csrf)</stringProp>
+                    <stringProp name="2106117302">(User_Activity_${PostIndex}|gtn:csrf)</stringProp>
                   </collectionProp>
                   <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                   <boolProp name="Assertion.assume_success">false</boolProp>
                   <intProp name="Assertion.test_type">2</intProp>
                 </ResponseAssertion>
                 <hashTree/>
-                <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+                <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="false">
                   <boolProp name="resetInterpreter">false</boolProp>
                   <stringProp name="parameters"></stringProp>
                   <stringProp name="filename"></stringProp>
@@ -482,7 +467,7 @@
       <hashTree>
         <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Call VU WRAPPER" enabled="true">
           <collectionProp name="ModuleController.node_path">
-            <stringProp name="-1227702913">WorkBench</stringProp>
+            <stringProp name="1358040521">Plan de travail</stringProp>
             <stringProp name="-1374347530">PERF_PLF_INTRANET_POST_ON_STREAM</stringProp>
             <stringProp name="82068801">VUser</stringProp>
             <stringProp name="-781219822">VU WRAPPER</stringProp>
@@ -523,7 +508,7 @@
         <stringProp name="filename">/tmp/PERF_PLF_ENT_INTRANET_POST_ON_STREAM${__time(HHmmSS)}.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>

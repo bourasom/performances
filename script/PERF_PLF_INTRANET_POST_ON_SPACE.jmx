@@ -155,17 +155,6 @@
             <stringProp name="CookieManager.policy">rfc2109</stringProp>
           </CookieManager>
           <hashTree/>
-          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Comment CSV Data Set Config" enabled="true">
-            <stringProp name="filename">${CSV_DATASET_FOLDER}/${CommentDatasetName}</stringProp>
-            <stringProp name="fileEncoding">	</stringProp>
-            <stringProp name="variableNames">PostPrefix,PostFrom,PostTo,Pattern</stringProp>
-            <stringProp name="delimiter">,</stringProp>
-            <boolProp name="quotedData">true</boolProp>
-            <boolProp name="recycle">true</boolProp>
-            <boolProp name="stopThread">false</boolProp>
-            <stringProp name="shareMode">Toutes les unités</stringProp>
-          </CSVDataSet>
-          <hashTree/>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Space CSV Data Set Config" enabled="true">
             <stringProp name="filename">${CSV_DATASET_FOLDER}/${SpaceDatasetName}</stringProp>
             <stringProp name="fileEncoding">	</stringProp>
@@ -591,7 +580,7 @@
         </ModuleController>
         <hashTree/>
       </hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
