@@ -64,7 +64,7 @@
           </elementProp>
           <elementProp name="VUGMaxThread" elementType="Argument">
             <stringProp name="Argument.name">VUGMaxThread</stringProp>
-            <stringProp name="Argument.value">${__P(expVUGMaxThread,10)}</stringProp>
+            <stringProp name="Argument.value">${__P(expVUGMaxThread,1)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="VUGWaitTime" elementType="Argument">
@@ -362,14 +362,14 @@
                 <hashTree/>
                 <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - Space content" enabled="true">
                   <collectionProp name="Asserion.test_strings">
-                    <stringProp name="-725055173">Administrateurs</stringProp>
                     <stringProp name="2109259953">Add your comment</stringProp>
-                    <stringProp name="1287881052">(Activité|Lien|Fichier)</stringProp>
-                    <stringProp name="-1872321263">Calendrier</stringProp>
+                    <stringProp name="1156960403">(Activité|Lien|Fichier|File|Activity|Link)</stringProp>
+                    <stringProp name="-612195863">Calendrier|Calendar</stringProp>
                     <stringProp name="2110063506">Forums</stringProp>
                     <stringProp name="-1347456360">Documents</stringProp>
                     <stringProp name="2255103">Home</stringProp>
                     <stringProp name="2696144">Wiki</stringProp>
+                    <stringProp name="0"></stringProp>
                     <stringProp name="0"></stringProp>
                   </collectionProp>
                   <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
@@ -482,7 +482,7 @@
         <stringProp name="filename">/tmp/${__time(HHmmSS)}.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
