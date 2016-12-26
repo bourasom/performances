@@ -365,12 +365,9 @@
                     <stringProp name="2109259953">Add your comment</stringProp>
                     <stringProp name="1156960403">(Activité|Lien|Fichier|File|Activity|Link)</stringProp>
                     <stringProp name="-612195863">Calendrier|Calendar</stringProp>
-                    <stringProp name="2110063506">Forums</stringProp>
                     <stringProp name="-1347456360">Documents</stringProp>
                     <stringProp name="2255103">Home</stringProp>
                     <stringProp name="2696144">Wiki</stringProp>
-                    <stringProp name="0"></stringProp>
-                    <stringProp name="0"></stringProp>
                   </collectionProp>
                   <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
                   <boolProp name="Assertion.assume_success">false</boolProp>
