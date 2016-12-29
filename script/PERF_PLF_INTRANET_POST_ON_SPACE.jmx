@@ -612,6 +612,10 @@
                   <stringProp name="script">vars.put(&quot;loggedin&quot;,&quot;false&quot;);</stringProp>
                 </BeanShellPreProcessor>
                 <hashTree/>
+                <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Thinking" enabled="true">
+                  <stringProp name="ConstantTimer.delay">${ThinkTime}</stringProp>
+                </ConstantTimer>
+                <hashTree/>
               </hashTree>
             </hashTree>
           </hashTree>
@@ -644,7 +648,7 @@
         </ModuleController>
         <hashTree/>
       </hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
