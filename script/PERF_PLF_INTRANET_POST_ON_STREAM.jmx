@@ -9,7 +9,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="ThreadCount" elementType="Argument">
             <stringProp name="Argument.name">ThreadCount</stringProp>
-            <stringProp name="Argument.value">${__P(expThreadCount,0)}</stringProp>
+            <stringProp name="Argument.value">${__P(expThreadCount,1)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="LoopCount" elementType="Argument">
@@ -54,17 +54,17 @@
           </elementProp>
           <elementProp name="ThinkTime" elementType="Argument">
             <stringProp name="Argument.name">ThinkTime</stringProp>
-            <stringProp name="Argument.value">${__P(expThinkTime,10000)}</stringProp>
+            <stringProp name="Argument.value">${__P(expThinkTime,12000)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="VUGMaxThread" elementType="Argument">
             <stringProp name="Argument.name">VUGMaxThread</stringProp>
-            <stringProp name="Argument.value">${__P(expVUGMaxThread,10)}</stringProp>
+            <stringProp name="Argument.value">${__P(expVUGMaxThread,0)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="VUGWaitTime" elementType="Argument">
             <stringProp name="Argument.name">VUGWaitTime</stringProp>
-            <stringProp name="Argument.value">${__P(expVUGWaitTime,15)}</stringProp>
+            <stringProp name="Argument.value">${__P(expVUGWaitTime,0)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="VUGUpStep" elementType="Argument">
@@ -297,7 +297,7 @@
           <hashTree>
             <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
               <boolProp name="LoopController.continue_forever">true</boolProp>
-              <stringProp name="LoopController.loops">4</stringProp>
+              <intProp name="LoopController.loops">-1</intProp>
             </LoopController>
             <hashTree>
               <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="PostIndexCounter" enabled="true">
@@ -506,39 +506,6 @@
           </value>
         </objProp>
         <stringProp name="filename">/tmp/PERF_PLF_ENT_INTRANET_POST_ON_STREAM${__time(HHmmSS)}.jtl</stringProp>
-      </ResultCollector>
-      <hashTree/>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-        <boolProp name="ResultCollector.error_logging">false</boolProp>
-        <objProp>
-          <name>saveConfig</name>
-          <value class="SampleSaveConfiguration">
-            <time>true</time>
-            <latency>true</latency>
-            <timestamp>true</timestamp>
-            <success>true</success>
-            <label>true</label>
-            <code>true</code>
-            <message>true</message>
-            <threadName>true</threadName>
-            <dataType>true</dataType>
-            <encoding>false</encoding>
-            <assertions>true</assertions>
-            <subresults>true</subresults>
-            <responseData>false</responseData>
-            <samplerData>false</samplerData>
-            <xml>true</xml>
-            <fieldNames>false</fieldNames>
-            <responseHeaders>false</responseHeaders>
-            <requestHeaders>false</requestHeaders>
-            <responseDataOnError>false</responseDataOnError>
-            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
-            <assertionsResultsToSave>0</assertionsResultsToSave>
-            <bytes>true</bytes>
-            <threadCounts>true</threadCounts>
-          </value>
-        </objProp>
-        <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
       <kg.apc.jmeter.reporters.ConsoleStatusLogger guiclass="kg.apc.jmeter.reporters.ConsoleStatusLoggerGui" testclass="kg.apc.jmeter.reporters.ConsoleStatusLogger" testname="jp@gc - Console Status Logger" enabled="true"/>
