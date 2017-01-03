@@ -429,7 +429,7 @@
                     <elementProp name="composerInput" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">true</boolProp>
                       <stringProp name="Argument.name">composerInput</stringProp>
-                      <stringProp name="Argument.value">${UserName} Post Activity on space {SpaceName}</stringProp>
+                      <stringProp name="Argument.value">${UserName} Post Activity on space ${SpaceName}</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
                       <boolProp name="HTTPArgument.use_equals">true</boolProp>
                     </elementProp>
