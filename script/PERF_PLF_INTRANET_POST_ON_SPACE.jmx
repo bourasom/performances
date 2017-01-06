@@ -277,7 +277,7 @@
                   <stringProp name="ConstantTimer.delay">${ThinkTime}</stringProp>
                 </ConstantTimer>
                 <hashTree/>
-                <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="false">
+                <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
                   <boolProp name="resetInterpreter">false</boolProp>
                   <stringProp name="parameters"></stringProp>
                   <stringProp name="filename"></stringProp>
@@ -606,7 +606,7 @@
                   </collectionProp>
                 </HeaderManager>
                 <hashTree/>
-                <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="false">
+                <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
                   <boolProp name="resetInterpreter">false</boolProp>
                   <stringProp name="parameters"></stringProp>
                   <stringProp name="filename"></stringProp>
