@@ -277,7 +277,7 @@
                   <stringProp name="ConstantTimer.delay">${ThinkTime}</stringProp>
                 </ConstantTimer>
                 <hashTree/>
-                <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+                <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="false">
                   <boolProp name="resetInterpreter">false</boolProp>
                   <stringProp name="parameters"></stringProp>
                   <stringProp name="filename"></stringProp>
@@ -554,20 +554,22 @@
                       <stringProp name="Argument.name">portal:action</stringProp>
                       <stringProp name="Argument.value">Logout</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
+                      <boolProp name="HTTPArgument.use_equals">true</boolProp>
                     </elementProp>
                     <elementProp name="portal:componentId" elementType="HTTPArgument">
                       <boolProp name="HTTPArgument.always_encode">true</boolProp>
                       <stringProp name="Argument.name">portal:componentId</stringProp>
                       <stringProp name="Argument.value">UIPortal</stringProp>
                       <stringProp name="Argument.metadata">=</stringProp>
+                      <boolProp name="HTTPArgument.use_equals">true</boolProp>
                     </elementProp>
                   </collectionProp>
                 </elementProp>
-                <stringProp name="HTTPSampler.domain">cea-test.exoplatform.org</stringProp>
-                <stringProp name="HTTPSampler.port">443</stringProp>
+                <stringProp name="HTTPSampler.domain"></stringProp>
+                <stringProp name="HTTPSampler.port"></stringProp>
                 <stringProp name="HTTPSampler.connect_timeout"></stringProp>
                 <stringProp name="HTTPSampler.response_timeout"></stringProp>
-                <stringProp name="HTTPSampler.protocol">https</stringProp>
+                <stringProp name="HTTPSampler.protocol"></stringProp>
                 <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
                 <stringProp name="HTTPSampler.path">/portal/intranet/</stringProp>
                 <stringProp name="HTTPSampler.method">GET</stringProp>
@@ -575,7 +577,6 @@
                 <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
                 <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
                 <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-                <stringProp name="HTTPSampler.implementation">Java</stringProp>
                 <boolProp name="HTTPSampler.monitor">false</boolProp>
                 <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
               </HTTPSamplerProxy>
@@ -605,14 +606,14 @@
                   </collectionProp>
                 </HeaderManager>
                 <hashTree/>
-                <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+                <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="false">
                   <boolProp name="resetInterpreter">false</boolProp>
                   <stringProp name="parameters"></stringProp>
                   <stringProp name="filename"></stringProp>
                   <stringProp name="script">vars.put(&quot;loggedin&quot;,&quot;false&quot;);</stringProp>
                 </BeanShellPreProcessor>
                 <hashTree/>
-                <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Thinking" enabled="true">
+                <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Thinking" enabled="false">
                   <stringProp name="ConstantTimer.delay">${ThinkTime}</stringProp>
                 </ConstantTimer>
                 <hashTree/>
